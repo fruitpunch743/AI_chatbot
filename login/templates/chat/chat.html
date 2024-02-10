@@ -1,0 +1,178 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='{% static "chat.css" %}' rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+    <link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    
+
+    <!-- Bootstrap core CSS -->
+</head>
+<body>
+  <div class="b-example-divider"></div>
+
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/login/home/{{mem_id}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="padding-right:30px ; font-size: 30px;">
+          Nexus
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/login/companies/{{mem_id}}" class="nav-link px-2 text-white">Companies</a></li>
+            <!-- <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li> -->
+            <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
+        </ul>
+        <div class="text-end">
+          {% if mem_id is None %}
+          <button type="button" class="btn btn-outline-light me-2" onclick="location.href = '/login/login'">Login</button>
+          <button type="button" class="btn" style="background-color: #00e271;" >Sign-up</button>
+          {% else %}
+            {{ mem_id }}
+          {% endif %} 
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class="container">
+  
+
+    <!-- Content wrapper start -->
+    <div class="content-wrapper">
+
+        <!-- Row start -->
+        <div class="row gutters">
+
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                <div class="card m-0">
+
+                    <!-- Row start -->
+                    <div class="row no-gutters">
+
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+                            <!-- <div class="selected-user">
+                                <span>To: <span class="name">Emily Russell</span></span>
+                            </div> -->
+                            <div class="chat-container">
+                                <ul class="chat-box chatContainerScroll messages-list">
+                                  <li class="chat-right" style="visibility:hidden;">
+                                    <!-- <div class="chat-hour">08:56 <span class="fa fa-check-circle"></span></div> -->
+                                    <div class="chat-text" style='background-color: #8bfe94;'>Hi, Russell
+                                         I need more information about Developer Plan.
+                                         Today’s Doodle celebrates Indian actress Sridevi, who is widely considered one of the most
+                                          influential Bollywood actresses of all time.
+                                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam semper diam at 
+                                          erat pulvinar, at pulvinar felis blandit. Vestibulum volutpat tellus diam, 
+                                         
+                                    </div>
+                                    
+                                </li>
+                                    <li class="chat-left">
+                                        <div class="chat-avatar">
+                                            <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="">
+                                            <div class="chat-name">Nexus</div>
+                                        </div>
+                                        <div class="chat-text" style='background-color: #b6b6b6;'>Hello, I'm Nexus.
+                                            
+                                        How can I help you today?</div>
+                                        <!-- <div class="chat-hour">08:55 <span class="fa fa-check-circle"></span></div> -->
+                                    </li>
+                                    
+                                    
+                                </ul>
+                                <!-- <div class="form-group mt-3 mb-0">
+                                    <textarea class="form-control" rows="3" placeholder="Type your message here..."></textarea>
+                                </div> -->
+                                <form class="bg-light message-form">
+                                  {%csrf_token%}
+                                    <div class="input-group">
+                                      <input type="text" placeholder="Type a message" aria-describedby="button-addon2" class="form-control rounded-0 border-0 py-4 bg-light message-input">
+                                      <div class="input-group-append">
+                                        <button id="button-addon2" type="submit" class="btn btn-link"> <i class="fa fa-paper-plane"></i></button>
+                                      </div>
+                                    </div>
+                                  </form>
+                                  <script>
+                                    const messagesList = document.querySelector('.messages-list');
+                                    const messageForm = document.querySelector('.message-form');
+                                    
+                                    const messageInput = document.querySelector('.message-input');
+                                    messageForm.addEventListener('submit', (event) => {
+                                      event.preventDefault();
+
+                                      const message = messageInput.value.trim();
+                                      if (message.length === 0) {
+                                        return;
+                                      }
+
+                                      const messageItem = document.createElement('li');
+                                      messageItem.classList.add('message', 'sent');
+                                      messageItem.innerHTML = `
+                                      <li class="chat-right">
+                                        <div class="chat-text" style='background-color: #8bfe94;'>
+                                          ${message}
+                                        </div>
+                                      </li>`;
+                                      messagesList.appendChild(messageItem);
+
+                                      messageInput.value = '';
+                                      fetch('', {
+                                        method: 'POST',
+                                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                                        body: new URLSearchParams({
+                                          'csrfmiddlewaretoken': document.querySelector('[name=csrfmiddlewaretoken]').value,
+                                          'message': message
+                                        })
+                                      })
+                                        .then(response => response.json())
+                                        .then(data => {
+                                          const response = data.response;
+                                          const messageItem = document.createElement('li');
+                                          messageItem.classList.add('message', 'received');
+                                          messageItem.innerHTML = `
+                                          <li class="chat-left">
+                                            <div class="chat-avatar">
+                                              <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png" alt="Retail Admin">
+                                              <div class="chat-name">Nexus</div>
+                                            </div>
+                                        <div class="chat-text" style='background-color: #b6b6b6;'>
+                                          ${response}
+                                        </div>
+                                      </li>
+                                          
+                                            `;
+                                          messagesList.appendChild(messageItem);
+                                        });
+                                    });
+                
+                                  </script>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                </div>
+
+            </div>
+
+        </div>
+        <!-- Row end -->
+
+    </div>
+    <!-- Content wrapper end -->
+
+</div>
+</body>
+</html>

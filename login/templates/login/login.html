@@ -1,0 +1,54 @@
+{% load static %}
+{% include '../headers/index.html' %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'login.css' %}/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+<link href=" {% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+</head>
+<body>
+  
+    <script>
+        $('.message a').click(function(){
+            $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+        });
+    </script>
+    <center>
+      <h2 style = "margin-top: 50px; color: rgb(0, 0, 0);">Nexus</h2>
+      <h4 style = "color: rgb(87, 87, 87);">Customer Login</h4>
+    </center>
+    <div class="login-page">
+        <div class="form">
+          <form class="login-form" action="" method = "post">
+            {% csrf_token %}
+            <input type="text" name = "user" id ="user" placeholder="username" required/>
+            <input type="password" name = "password" id ="password" placeholder="password" required/>
+            <button>login</button>
+            <!-- <p class="message">Not registered? <a href="#">Create an account</a></p> -->
+          </form>
+        </div>
+      </div>
+</body>
+</html>

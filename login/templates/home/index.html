@@ -1,0 +1,151 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Nexus- home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'carousel.css' %}" rel="stylesheet">
+  </head>
+  <body>
+<main>
+  <div class="b-example-divider"></div>
+
+  <header class="p-3 bg-dark text-white">
+    <div class="container">
+      {% if mem_id is None %}
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/login/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="padding-right:30px ; font-size: 30px;">
+          Nexus
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/login/home" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="/login/home" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/login/login" class="nav-link px-2 text-white">Companies</a></li>
+            <!-- <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li> -->
+            <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
+        </ul>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2" onclick="location.href = '/login/login'">Login</button>
+          <button type="button" class="btn" style="background-color: #00e271;" >Sign-up</button>
+        </div>
+      </div>
+      {% else %}
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/login/home/{{mem_id}}" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="padding-right:30px ; font-size: 30px;">
+          Nexus
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/login/companies/{{mem_id}}" class="nav-link px-2 text-white">Companies</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
+        </ul>
+        <div class="text-end">
+          {{ mem_id }}
+        </div>
+      </div>
+      {% endif %} 
+      </div>
+    </div>
+  </header>
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+  <div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+      <h1 class="display-5 fw-bold">Nexus!</h1>
+      <p class="col-md-8 fs-4">Next-Gen User Support</p>
+      
+    </div>
+  </div>
+    <hr class="featurette-divider" >
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">About Nexus</h2>
+        <p class="lead">Nexus, the AI-powered customer service tool, revolutionizes support interactions by seamlessly blending human-like intelligence with digital efficiency.</p>
+      </div>
+      <div class="col-md-5">
+        <!-- <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><img src ="data:image/jpeg;base64,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" width="100%" height="100%"/></svg> -->
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="250" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><img src = "https://cdn-icons-png.flaticon.com/512/2400/2400051.png"  height="250" width="250"/></svg>
+
+      </div>
+    </div>
+
+    <!-- <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading">Why Nexus</h2>
+        <p class="lead"></p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+      </div>
+      <div class="col-md-5">
+        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
+
+      </div>
+    </div> -->
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

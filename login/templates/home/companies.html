@@ -1,0 +1,135 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Nexus- home</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="{% static 'carousel.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <div class="b-example-divider"></div>
+
+  <header class="p-3 bg-dark text-white" style = "padding-bottom: 5rem;">
+    <div class="container">
+      {% if mem_id == "" %}
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/login/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="padding-right:30px ; font-size: 30px;">
+          Nexus
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/login/home" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="/login/home" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/login/companies" class="nav-link px-2 text-white">Companies</a></li>
+            <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+            <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
+        </ul>
+        <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2" onclick="location.href = '/login/login'">Login</button>
+          <button type="button" class="btn" style="background-color: #00e271;" >Sign-up</button>
+        </div>
+      </div>
+      {% else %}
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/login/home" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none" style="padding-right:30px ; font-size: 30px;">
+          Nexus
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">Home</a></li>
+            <li><a href="/login/home/{{mem_id}}" class="nav-link px-2 text-white">About</a></li>
+            <li><a href="/login/companies/{{mem_id}}" class="nav-link px-2 text-white">Companies</a></li>
+            <!-- <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li> -->
+            <!-- <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li> -->
+        </ul>
+        <div class="text-end">
+          {{ mem_id }}
+        </div>
+      </div>
+      {% endif %} 
+    </div>
+  </header>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+<main>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div class="container marketing" >
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>Company A</h2>
+        <p>Ask Nexus any enquiry you might have on their products</p>
+        <p><a class="btn btn-secondary" href="/login/chatbot/{{ mem_id }}">Ask &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      <!-- <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg> -->
+
+        <!-- <h2>Heading</h2>
+        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div>
+      <div class="col-lg-4">
+        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+
+        <h2>Heading</h2>
+        <p>And lastly this, the third column of representative placeholder content.</p>
+        <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
+      </div>
+    </div> -->
+
+
+    <!-- START THE FEATURETTES -->
+
+  
+
+  <!-- FOOTER -->
+  <footer class="container" style = "padding-top: 20rem;">
+    <p class="float-end"><center><a href="#">Back to top</a></center></p>
+    <!-- <p>&copy; 2017–2021 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p> -->
+  </footer>
+</main>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>

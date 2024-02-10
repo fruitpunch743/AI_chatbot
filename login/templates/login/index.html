@@ -1,0 +1,91 @@
+{% load static %}
+{% include '../headers/index.html' %} 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Nexus - Login</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/blog/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'assets/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog.css' %}/" rel="stylesheet">
+  </head>
+  <body style = "background-color: #4CAF50;">
+    <main class="container">
+  <!-- <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark" style = "margin">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
+      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
+    </div>
+  </div> -->
+  <center><h2 style = "margin-top: 100px; font-family: 'Roboto', sans-serif;">Sign in to Nexus</h2></center>
+  <div class="row mb-2" style = "margin-top: 100px; padding-bottom: 100px;">
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style = "background-color: white;">
+        <div class="col p-4 d-flex flex-column position-static">
+          
+          <h3 class="mb-0">As customers</h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">For any queries on products</p>
+          <a href="/login/login" class="stretched-link"></a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajLsgycyaPLeUaDZ66RvOxBLEypJE1J1jhP8v5BWZCg&s" width="100%" height="100%" fill="#55595c"/></svg>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative" style = "background-color: white;">
+        <div class="col p-4 d-flex flex-column position-static">
+          
+          <h3 class="mb-0">As Buisness</h3>
+          <div class="mb-1 text-muted"></div>
+          <p class="card-text mb-auto">Ask  queries on the product.Get access to meaningful data with real-time analytics. </p>
+          <a href="/login/login" class="stretched-link"></a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajLsgycyaPLeUaDZ66RvOxBLEypJE1J1jhP8v5BWZCg&s" width="100%" height="100%" fill="#55595c"/></svg>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="blog-footer">
+  
+    <a href="#">Back to top</a>
+  </p>
+</footer> 
+  </body>
+</html>
