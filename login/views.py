@@ -7,7 +7,7 @@ import openai
 # import json
 
 
-openai_api_key = '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'
+openai_api_key = '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'
 openai.api_key = openai_api_key
 
 def ask_openai(message):
