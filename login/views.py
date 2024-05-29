@@ -7,17 +7,11 @@ import openai
 # import json
 
 
-openai_api_key = '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'
+openai_api_key = ''#open ai api key here
 openai.api_key = openai_api_key
 
 def ask_openai(message):
-    # print(message)
-    # maxSols = 3
-    # resp = requests.post("http://10.10.166.240:8000/getAnswer/", headers={"Content-Type": "application/json"},
-    #                       data=json.dumps({"description": message}))
-    # answer = resp.json()["answer"]
-    # return answer
-    # # return eval(answer)["solutions"][:maxSols]
+   
     response = openai.ChatCompletion.create(
         model = "gpt-3.5-turbo",
         messages=[
